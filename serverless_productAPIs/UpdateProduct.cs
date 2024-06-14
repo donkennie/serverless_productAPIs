@@ -23,7 +23,7 @@ namespace serverless_productAPIs
             {
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
                 Product productData = JsonConvert.DeserializeObject<Product>(requestBody);
-                using (SqlConnection connection = new SqlConnection(Environment.GetEnvironmentVariable("DBConnectionString")))
+                using (SqlConnection connection = new SqlConnection(Environment.GetEnvironmentVariable("SQLAZUREDBConnectionString")))
                 {
 
                     string queryString = @"UPDATE [dbo].[ProductInformation] 

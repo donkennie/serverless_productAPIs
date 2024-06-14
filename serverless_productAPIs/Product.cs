@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace serverless_productAPIs
+﻿namespace serverless_productAPIs
 {
     public class Product
     {
