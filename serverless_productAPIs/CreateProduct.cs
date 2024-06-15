@@ -28,8 +28,8 @@ namespace serverless_productAPIs
                     (Product_Name,Product_Description,Product_Price, 
                     Product_Quantity,Category_Name)
                      VALUES(@Product_Name,@Product_Description,
-                    @Product_Price,@Product_Quantity, 
-                    @Category_Name)";
+                    @Product_Price,@Product_Quantity, @Category_Name)";
+
                     using (SqlCommand cmd = new SqlCommand(queryString))
                     {
                         cmd.Parameters.AddWithValue("@Product_Name",
