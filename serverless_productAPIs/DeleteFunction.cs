@@ -19,7 +19,7 @@ namespace serverless_productAPIs
             try
             {
                 using (SqlConnection connection = new SqlConnection
-               (Environment.GetEnvironmentVariable("SQLAZUREDBConnectionString")))
+               (Environment.GetEnvironmentVariable("SQLAZURECONNSTR_DBConnectionString", EnvironmentVariableTarget.Process)))
                 {
                     string queryString = @"DELETE FROM [dbo].[ProductInformation] WHERE [Product_ID] = @Product_ID";
                     using (SqlCommand cmd = new SqlCommand(queryString))

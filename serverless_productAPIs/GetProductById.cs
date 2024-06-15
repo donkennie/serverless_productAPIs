@@ -24,7 +24,7 @@ namespace serverless_productAPIs
             {
                 List<Product> productData = new List<Product>();
                 using (SqlConnection connection = new SqlConnection
-               (Environment.GetEnvironmentVariable("SQLAZUREDBConnectionString")))
+               (Environment.GetEnvironmentVariable("SQLAZURECONNSTR_DBConnectionString", EnvironmentVariableTarget.Process)))
                 {
                     string queryString = @"SELECT [Product_ID]
                                          ,[Product_Name]

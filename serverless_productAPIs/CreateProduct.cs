@@ -22,7 +22,7 @@ namespace serverless_productAPIs
             {
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
                 Product productData = JsonConvert.DeserializeObject<Product>(requestBody);
-                using (SqlConnection connection = new SqlConnection(Environment.GetEnvironmentVariable("SQLAZUREDBConnectionString")))
+                using (SqlConnection connection = new SqlConnection(Environment.GetEnvironmentVariable("SQLAZURECONNSTR_DBConnectionString", EnvironmentVariableTarget.Process)))
                 {
                     string queryString = @"INSERT INTO [ProductInformation]
                     (Product_Name,Product_Description,Product_Price, 
